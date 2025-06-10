@@ -1,0 +1,11 @@
+{
+  "name": "com.thebeardev.ursinity",
+  "version": "0.1",
+  "displayName": "Ursinity",
+  "description": "A package of utilities and resources for Unity games.",
+  "author": {
+    "name": "Bear Evans",
+    "email": "bear-evans@outlook.com",
+    "url": "http://thebear.dev"
+  }
+}

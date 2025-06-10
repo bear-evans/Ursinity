@@ -1,0 +1,18 @@
+{
+  "name": "TheBearDev.Ursinity.Editor",
+  "rootNamespace": "TheBearDev.Ursinity.Editor",
+  "references": [
+    "TheBearDev.Ursinity"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}
