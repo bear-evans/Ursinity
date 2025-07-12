@@ -1,16 +1,19 @@
 namespace TheBearDev.Ursinity.Runtime.Time
 {
     /// <summary>
-    /// Represents a stopwatch utility used for measuring elapsed time.
+    /// The PomodoroTimer class provides a utility for implementing a timer
+    /// based on the Pomodoro technique, allowing the measurement
+    /// and control of elapsed time within a specified duration.
     /// </summary>
-    public class Stopwatch
+    public class PomodoroTimer
     {
         #region Constructor
 
         /// <summary>
-        /// Represents a stopwatch utility used for measuring elapsed time.
+        /// Represents a timer implementing the Pomodoro technique, offering functionality
+        /// to manage and check elapsed time within a specified duration.
         /// </summary>
-        public Stopwatch(long duration)
+        public PomodoroTimer(long duration)
         {
             durationInMilliseconds = duration;
         }
@@ -20,33 +23,34 @@ namespace TheBearDev.Ursinity.Runtime.Time
         #region Properties
 
         /// <summary>
-        /// Gets a value indicating whether the stopwatch has been started and is currently running.
+        /// Gets a value indicating whether the timer has been started and is currently running.
         /// </summary>
         /// <value>
-        /// True if the stopwatch is running; otherwise, false.
+        /// Returns true if the timer is running; otherwise, false.
         /// </value>
         public bool IsStarted
         {
             get => timer.IsRunning;
         }
 
+
         /// <summary>
-        /// Gets the total duration specified for the stopwatch, in milliseconds.
+        /// Gets the duration of the timer in milliseconds.
         /// </summary>
         /// <value>
-        /// The total duration in milliseconds as a read-only value.
+        /// Returns the total duration of the timer as a 64-bit integer value in milliseconds.
         /// </value>
-        // ReSharper disable once MemberCanBePrivate.Global
         public long DurationInMilliseconds
         {
             get => durationInMilliseconds;
         }
 
+
         /// <summary>
-        /// Gets the duration specified for the stopwatch in seconds.
+        /// Gets the duration of the timer in seconds.
         /// </summary>
         /// <value>
-        /// The duration of the stopwatch in seconds, derived from the duration in milliseconds.
+        /// The duration in seconds, derived by converting the millisecond duration to seconds.
         /// </value>
         public long DurationInSeconds
         {
@@ -67,7 +71,7 @@ namespace TheBearDev.Ursinity.Runtime.Time
         #region Methods
 
         /// <summary>
-        /// Starts the stopwatch to begin measuring elapsed time.
+        /// Initiates the timer, starting the measurement of elapsed time from the current moment.
         /// </summary>
         public void Start()
         {
@@ -75,17 +79,17 @@ namespace TheBearDev.Ursinity.Runtime.Time
         }
 
         /// <summary>
-        /// Stops the stopwatch and halts the measurement of elapsed time.
+        /// Stops the timer, pausing the measurement of elapsed time without resetting it.
         /// </summary>
         public void Stop()
         {
             timer.Stop();
         }
 
+
         /// <summary>
-        /// Restarts the stopwatch by stopping, resetting, and then starting it again.
+        /// Resets the timer to its initial state and immediately starts measuring elapsed time from zero.
         /// </summary>
-        // ReSharper disable once MemberCanBePrivate.Global
         public void Restart()
         {
             timer.Stop();
@@ -93,23 +97,26 @@ namespace TheBearDev.Ursinity.Runtime.Time
             timer.Start();
         }
 
+
         /// <summary>
-        /// Determines whether the elapsed time of the stopwatch is greater than the specified duration.
+        /// Determines whether the elapsed time of the timer has exceeded the specified duration, returning a boolean result.
         /// </summary>
         /// <returns>
-        /// Returns true if the elapsed time exceeds the duration; otherwise, false.
+        /// True if the elapsed time exceeds the specified duration; otherwise, false.
         /// </returns>
         public bool IsElapsed()
         {
             return timer.ElapsedMilliseconds > DurationInMilliseconds;
         }
 
+
         /// <summary>
-        /// Checks if the elapsed time of the stopwatch exceeds the specified duration,
-        /// and resets the stopwatch if the condition is met.
+        /// Checks if the timer has exceeded the specified duration and resets the timer
+        /// if the duration is exceeded.
         /// </summary>
         /// <returns>
-        /// Returns true if the elapsed time exceeds the specified duration and the stopwatch is reset; otherwise, false.
+        /// Returns true if the elapsed time exceeds the specified duration and the timer
+        /// is reset; otherwise, returns false.
         /// </returns>
         public bool CheckAndReset()
         {

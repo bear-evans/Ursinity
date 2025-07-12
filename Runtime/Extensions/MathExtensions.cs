@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace TheBearDev.Ursinity.Runtime.Extensions
 {
-    public static class NumberExtensions
+    public static class MathExtensions
     {
         /// <summary>
         /// Converts an angle from degrees to radians.
